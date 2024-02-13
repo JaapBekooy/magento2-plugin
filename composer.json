@@ -18,7 +18,7 @@
     {
       "name": "Jaap Bekooy",
       "email": "jaap@comensis.nl"
-    },
+    }
   ],
   "autoload": {
     "files": ["registration.php"],
