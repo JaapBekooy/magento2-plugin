@@ -1,5 +1,5 @@
 {
-  "name": "JaapBekooy/magento2-plugin",
+  "name": "jaapbekooy/magento2-plugin",
   "description": "Picqer Extended Integration for Magento 2",
   "version": "1.0.3",
   "type": "magento2-module",

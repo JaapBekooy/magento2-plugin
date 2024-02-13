@@ -5,7 +5,7 @@ Magento 2 Extensions for Picqer.
 This project can easily be installed through Composer.
 
 ```
-composer require picqer/magento2-plugin
+composer require jaapbekooy/magento2-plugin
 bin/magento module:enable Picqer_Integration
 bin/magento setup:upgrade
 ```
