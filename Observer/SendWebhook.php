@@ -27,10 +27,10 @@ class SendWebhook implements ObserverInterface
             return;
         }
 
-        $subDomain = $this->_scopeConfig->getValue('picqer_integration_options/webhook_settings/picqer_subdomain');
+        $webhookUrl = $this->_scopeConfig->getValue('picqer_integration_options/webhook_settings/webhook_url');
         $magentoKey = $this->_scopeConfig->getValue('picqer_integration_options/webhook_settings/connection_key');
 
-        if (empty($subDomain) || empty($magentoKey)) {
+        if (empty($webhookUrl) || empty($magentoKey)) {
             return; // Not fully configured
         }
 
@@ -49,7 +49,7 @@ class SendWebhook implements ObserverInterface
         ]);
 
         try {
-            $this->_curl->post(sprintf('https://%s.picqer.com/webshops/magento2/orderPush/%s', trim($subDomain), trim($magentoKey)), json_encode($orderData));
+            $this->_curl->post(sprintf('%s', trim($webhookUrl), trim($magentoKey)), json_encode($orderData));
         } catch (\Exception $e) {
             $this->_logger->debug(sprintf('Exception occurred with Picqer: %s', $e->getMessage()));
         }

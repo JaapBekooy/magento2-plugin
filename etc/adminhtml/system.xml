@@ -15,8 +15,8 @@
                     <label>Active</label>
                     <source_model>Picqer\Integration\Model\Sales\Active</source_model>
                 </field>
-                <field id="picqer_subdomain" translate="label" type="text" sortOrder="20" showInDefault="1" showInWebsite="0" showInStore="0">
-                    <label>Picqer subdomain</label>
+                <field id="webhook_url" translate="label" type="text" sortOrder="20" showInDefault="1" showInWebsite="0" showInStore="0">
+                    <label>Order webhook url</label>
                 </field>
                 <field id="connection_key" translate="label" type="text" sortOrder="30" showInDefault="1" showInWebsite="0" showInStore="0">
                     <label>Connection key</label>
