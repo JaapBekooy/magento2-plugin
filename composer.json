@@ -1,10 +1,10 @@
 {
   "name": "jaapbekooy/magento2-plugin",
-  "description": "Picqer Extended Integration for Magento 2",
+  "description": "Extended Integration for Magento 2 (Order webhook)",
   "version": "1.0.3",
   "type": "magento2-module",
   "keywords": [
-    "picqer",
+    "webhook",
     "magento2"
   ],
   "homepage": "https://github.com/JaapBekooy/magento2-plugin",
@@ -16,18 +16,14 @@
   },
   "authors": [
     {
-      "name": "Anna van Brecht",
-      "email": "support@picqer.com"
+      "name": "Jaap Bekooy",
+      "email": "jaap@comensis.nl"
     },
-    {
-      "name": "Stephan Groen",
-      "email": "support@picqer.com"
-    }
   ],
   "autoload": {
     "files": ["registration.php"],
     "psr-4": {
-      "Picqer\\Integration\\" : ""
+      "Webshoplocatie\\Integration\\" : ""
     }
   }
 }
