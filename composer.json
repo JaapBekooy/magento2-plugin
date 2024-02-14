@@ -1,7 +1,7 @@
 {
   "name": "jaapbekooy/magento2-plugin",
   "description": "Extended Integration for Magento 2 (Order webhook)",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "type": "magento2-module",
   "keywords": [
     "webhook",

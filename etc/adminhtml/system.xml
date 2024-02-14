@@ -1,7 +1,7 @@
 <?xml version="1.0"?>
 <config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Config:etc/system_file.xsd">
     <system>
-        <tab id="webshoplicatie" translate="label" sortOrder="10">
+        <tab id="webshoplocatie" translate="label" sortOrder="10">
             <label>Webshoplocatie</label>
         </tab>
         <section id="webshoplocatie_integration_options" translate="label" sortOrder="10" showInDefault="1" showInWebsite="0" showInStore="0">
@@ -16,7 +16,7 @@
                     <source_model>Webshoplocatie\Integration\Model\Sales\Active</source_model>
                 </field>
                 <field id="webhook_url" translate="label" type="text" sortOrder="20" showInDefault="1" showInWebsite="0" showInStore="0">
-                    <label>Order webhook url</label>
+                    <label>Webhook url</label>
                 </field>
                 <field id="connection_key" translate="label" type="text" sortOrder="30" showInDefault="1" showInWebsite="0" showInStore="0">
                     <label>Connection key</label>

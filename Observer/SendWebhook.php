@@ -38,7 +38,7 @@ class SendWebhook implements ObserverInterface
 
         $orderData = [];
         $orderData['increment_id'] = $order->getIncrementId();
-        $orderData['webshoplicatie_magento_key'] = $magentoKey;
+        $orderData['webshoplocatie_magento_key'] = $magentoKey;
 
         $this->_curl->setHeaders([
             'Content-Type' => 'application/json'
@@ -49,7 +49,7 @@ class SendWebhook implements ObserverInterface
         ]);
 
         try {
-            $this->_curl->post(sprintf('%s', trim($webhookUrl), trim($magentoKey)), json_encode($orderData));
+            $this->_curl->post(sprintf('%s', trim($webhookUrl)), json_encode($orderData));
         } catch (\Exception $e) {
             $this->_logger->debug(sprintf('Exception occurred with Webshoplocatie: %s', $e->getMessage()));
         }
