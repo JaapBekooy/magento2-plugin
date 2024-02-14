@@ -38,7 +38,7 @@ class SendWebhook implements ObserverInterface
 
         $orderData = [];
         $orderData['increment_id'] = $order->getIncrementId();
-        $orderData['picqer_magento_key'] = $magentoKey;
+        $orderData['webshoplocatie_magento_key'] = $magentoKey;
 
         $this->_curl->setHeaders([
             'Content-Type' => 'application/json'
@@ -49,9 +49,9 @@ class SendWebhook implements ObserverInterface
         ]);
 
         try {
-            $this->_curl->post(sprintf('https://%s.picqer.com/webshops/magento2/orderPush/%s', trim($subDomain), trim($magentoKey)), json_encode($orderData));
+            $this->_curl->post(sprintf('%s', trim($subDomain)), json_encode($orderData));
         } catch (\Exception $e) {
-            $this->_logger->debug(sprintf('Exception occurred with Picqer: %s', $e->getMessage()));
+            $this->_logger->debug(sprintf('Exception occurred with Webshoplocatie: %s', $e->getMessage()));
         }
     }
 }
