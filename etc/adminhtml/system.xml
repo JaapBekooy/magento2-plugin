@@ -8,7 +8,7 @@
             <class>separator-top</class>
             <label>Integration</label>
             <tab>picqer</tab>
-            <resource>Picqer_Integration::webhooks_config</resource>
+            <resource>Webshoplocatie_Integration::webhooks_config</resource>
             <group id="webhook_settings" translate="label" type="text" sortOrder="10" showInDefault="1" showInWebsite="0" showInStore="0">
                 <label>General Configuration</label>
                 <field id="active" translate="label" type="select" sortOrder="10" showInDefault="1" showInWebsite="0" showInStore="0">
