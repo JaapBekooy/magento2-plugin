@@ -1,6 +1,6 @@
 <?php
 
-namespace Webshoplocatie\Integration\Model\Sales;
+namespace Picqer\Integration\Model\Sales;
 
 class Active implements \Magento\Framework\Option\ArrayInterface
 {

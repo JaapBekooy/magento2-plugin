@@ -1,8 +1,8 @@
 <?xml version="1.0"?>
 <config>
     <default>
-        <webshoplocatie_integration_options>
+        <picqer_integration_options>
             <webhook_settings />
-        </webshoplocatie_integration_options>
+        </picqer_integration_options>
     </default>
 </config>

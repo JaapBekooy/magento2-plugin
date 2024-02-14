@@ -1,6 +1,6 @@
 <?php
 
-namespace Webshoplocatie\Integration\Observer;
+namespace Picqer\Integration\Observer;
 
 use Magento\Framework\Event\ObserverInterface;
 
@@ -22,15 +22,15 @@ class SendWebhook implements ObserverInterface
 
     public function execute(\Magento\Framework\Event\Observer $observer)
     {
-        $active = $this->_scopeConfig->getValue('webshoplocatie_integration_options/webhook_settings/active');
+        $active = $this->_scopeConfig->getValue('picqer_integration_options/webhook_settings/active');
         if ((int)$active !== 1) {
             return;
         }
 
-        $webhookUrl = $this->_scopeConfig->getValue('webshoplocatie_integration_options/webhook_settings/webhook_url');
-        $magentoKey = $this->_scopeConfig->getValue('webshoplocatie_integration_options/webhook_settings/connection_key');
+        $subDomain = $this->_scopeConfig->getValue('picqer_integration_options/webhook_settings/picqer_subdomain');
+        $magentoKey = $this->_scopeConfig->getValue('picqer_integration_options/webhook_settings/connection_key');
 
-        if (empty($webhookUrl) || empty($magentoKey)) {
+        if (empty($subDomain) || empty($magentoKey)) {
             return; // Not fully configured
         }
 
@@ -38,7 +38,7 @@ class SendWebhook implements ObserverInterface
 
         $orderData = [];
         $orderData['increment_id'] = $order->getIncrementId();
-        $orderData['webshoplocatie_magento_key'] = $magentoKey;
+        $orderData['picqer_magento_key'] = $magentoKey;
 
         $this->_curl->setHeaders([
             'Content-Type' => 'application/json'
@@ -49,9 +49,9 @@ class SendWebhook implements ObserverInterface
         ]);
 
         try {
-            $this->_curl->post(sprintf('%s', trim($webhookUrl)), json_encode($orderData));
+            $this->_curl->post(sprintf('https://%s.picqer.com/webshops/magento2/orderPush/%s', trim($subDomain), trim($magentoKey)), json_encode($orderData));
         } catch (\Exception $e) {
-            $this->_logger->debug(sprintf('Exception occurred with Webshoplocatie: %s', $e->getMessage()));
+            $this->_logger->debug(sprintf('Exception occurred with Picqer: %s', $e->getMessage()));
         }
     }
 }
