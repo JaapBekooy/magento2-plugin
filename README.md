@@ -14,7 +14,7 @@ bin/magento setup:upgrade
 1. Log onto your Magento 2 admin account and navigate to Stores > Configuration > Webshoplocatie > Webhooks
 2. Fill out the general configuration information:
     + Active: Yes
-    + Order webhook url: The url to call to push a new order.
+    + Webhook url: The url to call to push a new order.
     + Connection Key: Unique Key (webshopid)
 
 Orders will now be pushed to Webshoplocatie immediately.
