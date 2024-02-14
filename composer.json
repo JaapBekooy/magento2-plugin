@@ -1,7 +1,7 @@
 {
   "name": "webshoplocatie/magento2-plugin",
   "description": "Webshoplocatie Integration for Magento 2",
-  "version": "1.0.5",
+  "version": "1.0.6",
   "type": "magento2-module",
   "keywords": [
     "webshoplocatie",
