@@ -1,7 +1,7 @@
 {
   "name": "webshoplocatie/magento2-plugin",
   "description": "Webshoplocatie Integration for Magento 2",
-  "version": "1.0.8",
+  "version": "1.1.0",
   "type": "magento2-module",
   "keywords": [
     "webshoplocatie",
@@ -16,18 +16,14 @@
   },
   "authors": [
     {
-      "name": "Anna van Brecht",
-      "email": "support@picqer.com"
-    },
-    {
-      "name": "Stephan Groen",
-      "email": "support@picqer.com"
+      "name": "Jaap Bekooy  ",
+      "email": "jaap@comensis.nl"
     }
   ],
   "autoload": {
     "files": ["registration.php"],
     "psr-4": {
-      "Picqer\\Integration\\" : ""
+      "Webshoplocatie\\Integration\\" : ""
     }
   }
 }
