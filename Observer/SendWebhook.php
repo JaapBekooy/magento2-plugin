@@ -41,13 +41,20 @@ class SendWebhook implements ObserverInterface
 
         $order = $observer->getEvent()->getOrder();
         $orderId = $order->getIncrementId();
+        $orderEntityId = $order->getEntityId();
+        $shippingAddress = $order->getShippingAddress();
 
         $signature = base64_encode(hash_hmac('sha256',$orderId, hash('md5', $magentoSecret), true));
 
-        $orderData = [];
-        $orderData['increment_id'] = $orderId;
-        $orderData['signature'] = $signature;
-        $orderData['order'] = $this->_dataObjectConverter->toNestedArray($order, [], \Magento\Sales\Api\Data\OrderInterface::class);
+        $orderData = [
+        	'increment_id' 	=> $orderId,
+        	'entity_id' 	=> $orderEntityId,
+        	'signature' 	=> $signature,
+        	'order' 		=> $this->_dataObjectConverter->toNestedArray($order, [], \Magento\Sales\Api\Data\OrderInterface::class)
+        ];
+        $orderData['order']['shipping_address'] = $shippingAddress->getData();
+        // the following line is necessary to get straat 1 and street 2 in seperate columns instead of concatenated together:
+        $orderData['order']['shipping_address']['street'] = $shippingAddress->getStreet();
 
         $this->_curl->setHeaders([
             'Content-Type' => 'application/json'
