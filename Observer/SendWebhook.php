@@ -50,6 +50,7 @@ class SendWebhook implements ObserverInterface
         	'increment_id' 	=> $orderId,
         	'entity_id' 	=> $orderEntityId,
         	'signature' 	=> $signature,
+            'version'       => '1.2.0',
         	'order' 		=> $this->_dataObjectConverter->toNestedArray($order, [], \Magento\Sales\Api\Data\OrderInterface::class)
         ];
         $orderData['order']['shipping_address'] = $shippingAddress->getData();
